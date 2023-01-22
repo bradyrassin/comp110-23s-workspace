@@ -4,7 +4,15 @@ __author__ = 730560378
 
 chosen_word: str = input("Enter a 5-character word: ")
 
+if (len(chosen_word) != 5):
+    print ("Error: Word must contain 5 characters")
+    exit()
+
+
 chosen_letter: str = input("Enter a single character: ")
+
+if (len(chosen_letter) != 1):
+    print("Error: Character must be a single character")
 
 print("Searching for " + chosen_letter + " in " + chosen_word)
 
