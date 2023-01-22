@@ -13,6 +13,7 @@ chosen_letter: str = input("Enter a single character: ")
 
 if (len(chosen_letter) != 1):
     print("Error: Character must be a single character")
+    exit()
 
 print("Searching for " + chosen_letter + " in " + chosen_word)
 
