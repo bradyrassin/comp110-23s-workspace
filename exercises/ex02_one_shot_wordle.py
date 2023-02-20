@@ -1,7 +1,8 @@
-"""One Shot Wordle using while loops"""
+"""One Shot Wordle using while loops."""
+__author__ = "730560378"
 
 i: int = 0
-result: str = "" #initialize to empty string
+result: str = ""
 
 secret_word: str = "python"
 WHITE_BOX: str = "\U00002B1C"
