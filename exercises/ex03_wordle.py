@@ -31,30 +31,32 @@ def emojified(guess_word: str, secret_word: str) -> str:
         idx = idx + 1
     return result
 
-def input_guess(expected_length: int):
+def input_guess(expected_length: int) -> str:
     """Prompts user for word of expected length"""
     guess_word: str = input(f"Enter a {expected_length} character word: ")
     if len(guess_word) == expected_length:
         return guess_word
     else: #if the length is incorrect
-        new_guess: str = input(f"That was not {expected_length} chars! Try again: ")
+        new_guess: str = input(f"That wasn't {expected_length} chars! Try again: ")
         while len(new_guess) != expected_length:
-            new_guess = input(f"That was not {expected_length} chars! Try again: ")
+            new_guess = input(f"That wasn't {expected_length} chars! Try again: ")
         return new_guess
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     secret_word: str = "codes"
+    win_status: bool = False
     n: int = 1
-    while n <= 6: #Guess counter that gives prompts
+    while n <= 6 and not win_status: #Guess counter that gives prompts
         print(f"=== Turn {n}/6 ===")
         guess: str = input_guess(5)
-        print(emojified(guess, "codes"))
-        if guess == "codes":
-            print(f"You won in {n} turns!")
-            exit()
+        print(emojified(guess, secret_word))
+        if guess == secret_word:
+            print(f"You won in {n}/6 turns!")
+            win_status = True
         n = n + 1
-    print("X/6 - Sorry, try again tomorrow!")
+    if n >= 7:
+        print("X/6 - Sorry, try again tomorrow!")
 
 if __name__ == "__main__":
     main()
