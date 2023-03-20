@@ -1,6 +1,8 @@
 """Building list utility functions continued."""
 
+
 __author__ = "730560378"
+
 
 def only_evens(numbers: list[int]) -> list[int]:
     """Given a list, return only the even numbers."""
@@ -12,6 +14,7 @@ def only_evens(numbers: list[int]) -> list[int]:
         idx += 1
     return even_list
 
+
 def concat(list_one: list[int], list_two: list[int]) -> list[int]:
     """Given two lists, return them as a single list."""
     combined_list: list[int] = []
@@ -20,6 +23,7 @@ def concat(list_one: list[int], list_two: list[int]) -> list[int]:
     for element in list_two:
         combined_list.append(element)
     return combined_list
+
 
 def sub(a_list: list[int], start_index: int, end_index: int) -> list[int]:
     """Given a list, a start index and an end index return the numbers."""
