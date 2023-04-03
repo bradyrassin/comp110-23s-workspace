@@ -24,7 +24,8 @@ def main() -> None:
         print(f"After your last encounter you hear a helicopter flying in the distance, {player} has two options")
         print(f"Option 1: {player} runs to the top of the mountain, signaling for help and ending the game by escaping")
         print("Option 2: Start again on the mystery island, discover more secrets and keep adding to your point total.")
-        choice: int = int(input("Print your decision: "))
+        choice: int = 0
+        choice = int(input("Print your decision: "))
         while choice != 1 and choice != 2:
             print("That was not a valid answer, try again")
             choice = int(input("Print your decision: "))
